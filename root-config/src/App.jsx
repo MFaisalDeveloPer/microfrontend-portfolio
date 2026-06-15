@@ -4,6 +4,7 @@ const Navbar = React.lazy(() => import("navbar/Navbar"));
 const Hero = React.lazy(() => import("hero/Hero"));
 const Projects = React.lazy(() => import("projects/Projects"));
 const Experience = React.lazy(() =>import("experience/Experience"));
+const Skills = React.lazy(() => import("skills/Skills"));
 function App() {
   return (
     <>
@@ -17,6 +18,9 @@ function App() {
 
       <Suspense fallback={<h2>Loading Projects...</h2>}>
         <Projects />
+      </Suspense>
+      <Suspense fallback={<h2>Loading Skills...</h2>}>
+        <Skills />
       </Suspense>
       <Suspense fallback={<h2>Loading Experience...</h2>}>
   <Experience />

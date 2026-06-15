@@ -25,6 +25,11 @@ export default defineConfig({
     name: "projects",
     entry: "http://localhost:5177/remoteEntry.js",
   },
+    skills: {
+    type: "module",
+    name: "skills",
+    entry: "http://localhost:5179/remoteEntry.js",
+  },
   experience: {
   type: "module",
   name: "experience",
