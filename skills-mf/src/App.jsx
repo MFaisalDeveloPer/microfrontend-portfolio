@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-
+import { useTheme } from "@mui/material/styles";
 function App() {
+  const theme = useTheme();
   const skills = [
     {
       category: "Frontend",
@@ -48,10 +49,10 @@ function App() {
   return (
     <section
       style={{
-        background: "#041128",
+        background: theme.palette.background.default,
         minHeight: "100vh",
         padding: "100px 20px",
-        color: "white",
+        color: theme.palette.text.primary,
       }}
     >
       <div
@@ -67,7 +68,7 @@ function App() {
           style={{
             textAlign: "center",
             fontSize: "clamp(2.5rem,5vw,4.5rem)",
-            color: "#00d4ff",
+            color: theme.palette.primary.main,
             marginBottom: "70px",
           }}
         >
@@ -96,9 +97,8 @@ function App() {
                 y: -10,
               }}
               style={{
-                background:
-                  "linear-gradient(145deg,#0c1d3d,#102852)",
-                border: "1px solid rgba(0,212,255,0.3)",
+                background: theme.palette.background.paper,
+                border: `1px solid ${theme.palette.divider}`,
                 borderRadius: "20px",
                 padding: "30px",
                 boxShadow:
@@ -129,7 +129,7 @@ function App() {
                       scale: 1.1,
                     }}
                     style={{
-                      background: "#16325f",
+                      background: theme.palette.primary.main,
                       padding: "10px 16px",
                       borderRadius: "999px",
                       fontSize: "14px",
