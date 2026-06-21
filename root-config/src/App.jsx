@@ -5,9 +5,18 @@ import Sidebar from "./components/Sidebar";
 import Topbar from "./components/Topbar";
 import MainContent from "./components/MainContent";
 import SplashScreen from "./components/SplashScreen";
+import GoogleLoginScreen from "./components/GoogleLoginScreen";
 
 function App() {
   const [loading, setLoading] = useState(true);
+
+  const [user, setUser] = useState(() => {
+    const savedUser = localStorage.getItem("user");
+
+    return savedUser
+      ? JSON.parse(savedUser)
+      : null;
+  });
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -19,6 +28,23 @@ function App() {
 
   if (loading) {
     return <SplashScreen />;
+  }
+
+  if (!user) {
+    return (
+      <GoogleLoginScreen
+        onLogin={(userData) => {
+          console.log("Logged User:", userData);
+
+          localStorage.setItem(
+            "user",
+            JSON.stringify(userData)
+          );
+
+          setUser(userData);
+        }}
+      />
+    );
   }
 
   return (
@@ -38,7 +64,7 @@ function App() {
           flexDirection: "column",
         }}
       >
-        <Topbar />
+        <Topbar user={user} />
 
         <Box
           sx={{
@@ -49,7 +75,7 @@ function App() {
             color: "text.primary",
           }}
         >
-          <MainContent />
+          <MainContent user={user} />
         </Box>
       </Box>
     </Box>

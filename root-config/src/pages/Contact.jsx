@@ -1,4 +1,17 @@
-import { Paper, Typography, Button, Stack } from "@mui/material";
+import {
+  Paper,
+  Typography,
+  Button,
+  Stack,
+  Avatar,
+  Chip,
+  Box,
+} from "@mui/material";
+
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import EmailIcon from "@mui/icons-material/Email";
+import DownloadIcon from "@mui/icons-material/Download";
 
 function Contact() {
   return (
@@ -10,7 +23,7 @@ function Contact() {
           fontWeight: 700,
         }}
       >
-        Contact
+        Contact & Profile
       </Typography>
 
       <Paper
@@ -19,46 +32,122 @@ function Contact() {
           borderRadius: 4,
         }}
       >
-        <Stack spacing={3}>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: 3,
+            mb: 4,
+          }}
+        >
+          <Avatar
+            sx={{
+              width: 90,
+              height: 90,
+              fontSize: 32,
+            }}
+          >
+            MF
+          </Avatar>
+
+          <Box>
+            <Typography variant="h4">
+              Md Faisal
+            </Typography>
+
+            <Typography
+              color="text.secondary"
+            >
+              Senior Software Engineer
+            </Typography>
+
+            <Typography
+              color="text.secondary"
+            >
+              React • Node.js • Microfrontends
+            </Typography>
+
+            <Chip
+              label="Available for Opportunities"
+              color="success"
+              sx={{ mt: 1 }}
+            />
+          </Box>
+        </Box>
+
+        <Typography
+          variant="h5"
+          sx={{ mb: 2 }}
+        >
+          Professional Summary
+        </Typography>
+
+        <Typography
+          color="text.secondary"
+          sx={{
+            mb: 4,
+            lineHeight: 1.8,
+          }}
+        >
+          Full Stack Developer with 7+ years of
+          experience building enterprise
+          applications using React.js, Node.js,
+          Redux Toolkit, Micro Frontends,
+          Microservices, SQL Server and Azure
+          DevOps. Experienced in designing
+          scalable frontend architectures and
+          delivering business-critical solutions.
+        </Typography>
+
+        <Stack spacing={2}>
           <Button
+            startIcon={<EmailIcon />}
             variant="contained"
             onClick={() =>
               window.open(
                 "https://mail.google.com/mail/?view=cm&fs=1&to=mdfaisal8310@gmail.com",
-                "_blank",
+                "_blank"
               )
             }
           >
-            Email
+            Email Me
           </Button>
 
           <Button
+            startIcon={<LinkedInIcon />}
             variant="contained"
             onClick={() =>
               window.open(
                 "https://www.linkedin.com/in/m-a-faisal-63404425b",
-                "_blank",
+                "_blank"
               )
             }
           >
-            LinkedIn
+            LinkedIn Profile
           </Button>
 
           <Button
+            startIcon={<GitHubIcon />}
             variant="contained"
             onClick={() =>
-              window.open("https://github.com/MFaisalDeveloPer", "_blank")
+              window.open(
+                "https://github.com/MFaisalDeveloPer",
+                "_blank"
+              )
             }
           >
-            GitHub
+            GitHub Profile
           </Button>
 
           <Button
+            startIcon={<DownloadIcon />}
             variant="contained"
             onClick={() => {
-              const link = document.createElement("a");
+              const link =
+                document.createElement("a");
               link.href = "/resume.pdf";
-              link.download = "MD_Faisal_Resume.pdf";
+              link.download =
+                "MD_Faisal_Resume.pdf";
               document.body.appendChild(link);
               link.click();
               document.body.removeChild(link);

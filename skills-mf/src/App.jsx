@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { useTheme } from "@mui/material/styles";
+
 function App() {
   const theme = useTheme();
+
   const skills = [
     {
       category: "Frontend",
@@ -51,7 +53,7 @@ function App() {
       style={{
         background: theme.palette.background.default,
         minHeight: "100vh",
-        padding: "100px 20px",
+        padding: "60px 20px",
         color: theme.palette.text.primary,
       }}
     >
@@ -70,6 +72,7 @@ function App() {
             fontSize: "clamp(2.5rem,5vw,4.5rem)",
             color: theme.palette.primary.main,
             marginBottom: "70px",
+            fontWeight: "700",
           }}
         >
           Technical Skills
@@ -94,22 +97,27 @@ function App() {
               }}
               whileHover={{
                 scale: 1.03,
-                y: -10,
+                y: -8,
               }}
               style={{
-                background: theme.palette.background.paper,
+                background:
+                  theme.palette.background.paper,
                 border: `1px solid ${theme.palette.divider}`,
                 borderRadius: "20px",
                 padding: "30px",
                 boxShadow:
-                  "0 0 25px rgba(0,212,255,0.08)",
+                  theme.palette.mode === "dark"
+                    ? "0 8px 30px rgba(0,0,0,0.3)"
+                    : "0 8px 30px rgba(0,0,0,0.08)",
+                transition: "all 0.3s ease",
               }}
             >
               <h2
                 style={{
-                  color: "#00d4ff",
+                  color: theme.palette.primary.main,
                   marginBottom: "25px",
                   fontSize: "1.8rem",
+                  fontWeight: "700",
                 }}
               >
                 {group.category}
@@ -126,14 +134,31 @@ function App() {
                   <motion.span
                     key={skill}
                     whileHover={{
-                      scale: 1.1,
+                      scale: 1.08,
                     }}
                     style={{
-                      background: theme.palette.primary.main,
+                      background:
+                        theme.palette.mode === "dark"
+                          ? "rgba(59,130,246,0.15)"
+                          : "rgba(59,130,246,0.08)",
+
+                      color:
+                        theme.palette.primary.main,
+
+                      border: `1px solid ${theme.palette.primary.main}`,
+
                       padding: "10px 16px",
+
                       borderRadius: "999px",
+
                       fontSize: "14px",
+
+                      fontWeight: "600",
+
                       cursor: "pointer",
+
+                      transition:
+                        "all 0.3s ease",
                     }}
                   >
                     {skill}

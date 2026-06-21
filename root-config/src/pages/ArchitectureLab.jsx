@@ -1,55 +1,21 @@
 import {
   Paper,
   Typography,
-  Grid,
-  Card,
-  CardContent,
+  Box,
 } from "@mui/material";
 
-const architecture = [
-  {
-    title: "Root Config",
-    description:
-      "Host application responsible for routing, shared state and module orchestration.",
-  },
-  {
-    title: "Navbar MF",
-    description:
-      "Shared navigation microfrontend consumed across modules.",
-  },
-  {
-    title: "Skills MF",
-    description:
-      "Technical skills dashboard built using React and Module Federation.",
-  },
-  {
-    title: "Experience MF",
-    description:
-      "Professional experience timeline and career highlights.",
-  },
-  {
-    title: "Projects MF",
-    description:
-      "Portfolio projects and enterprise application showcase.",
-  },
-  {
-    title: "Shared UI",
-    description:
-      "Material UI theme engine, reusable components and design system.",
-  },
-  {
-    title: "Redux Store",
-    description:
-      "Global state management shared across microfrontends.",
-  },
-  {
-    title: "Module Federation",
-    description:
-      "Runtime integration of independently deployed React applications.",
-  },
-];
-
 function ArchitectureLab() {
+  const nodeStyle = {
+    background: "#0f172a",
+    border: "1px solid #00d4ff",
+    borderRadius: "16px",
+    padding: "20px",
+    textAlign: "center",
+    minWidth: "180px",
+    color: "white",
+    fontWeight: "600",
+  };
+
   return (
     <>
       <Typography
@@ -64,53 +30,104 @@ function ArchitectureLab() {
 
       <Paper
         sx={{
-          p: 4,
+          p: 5,
           borderRadius: 4,
         }}
       >
         <Typography
           variant="h4"
           sx={{
-            mb: 4,
+            mb: 5,
             color: "#38bdf8",
             fontWeight: 700,
+            textAlign: "center",
           }}
         >
-          Microfrontend Portfolio Architecture
+          Micro Frontend Architecture
         </Typography>
 
-        <Grid container spacing={3}>
-          {architecture.map((item) => (
-            <Grid item xs={12} md={6} lg={3} key={item.title}>
-              <Card
-                sx={{
-                  height: "100%",
-                  borderRadius: 3,
-                  background: "#111827",
-                  color: "#fff",
-                  border: "1px solid #1e293b",
-                }}
-              >
-                <CardContent>
-                  <Typography
-                    variant="h6"
-                    sx={{
-                      color: "#38bdf8",
-                      fontWeight: 700,
-                      mb: 2,
-                    }}
-                  >
-                    {item.title}
-                  </Typography>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            mb: 4,
+          }}
+        >
+          <Box sx={nodeStyle}>
+            Root Config
+          </Box>
+        </Box>
 
-                  <Typography variant="body2">
-                    {item.description}
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
+        <Typography
+          align="center"
+          sx={{
+            fontSize: "2rem",
+            mb: 2,
+          }}
+        >
+          ↓
+        </Typography>
+
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            gap: 3,
+            flexWrap: "wrap",
+            mb: 4,
+          }}
+        >
+          <Box sx={nodeStyle}>
+            Navbar MF
+          </Box>
+
+          <Box sx={nodeStyle}>
+            Skills MF
+          </Box>
+
+          <Box sx={nodeStyle}>
+            Experience MF
+          </Box>
+
+          <Box sx={nodeStyle}>
+            Projects MF
+          </Box>
+        </Box>
+
+        <Typography
+          align="center"
+          sx={{
+            fontSize: "2rem",
+            mb: 2,
+          }}
+        >
+          ↓
+        </Typography>
+
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            gap: 3,
+            flexWrap: "wrap",
+          }}
+        >
+          <Box sx={nodeStyle}>
+            Redux Store
+          </Box>
+
+          <Box sx={nodeStyle}>
+            Theme Engine
+          </Box>
+
+          <Box sx={nodeStyle}>
+            Google OAuth
+          </Box>
+
+          <Box sx={nodeStyle}>
+            Module Federation
+          </Box>
+        </Box>
       </Paper>
     </>
   );

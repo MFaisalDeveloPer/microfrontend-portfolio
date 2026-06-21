@@ -9,9 +9,9 @@ const Skills = React.lazy(() => import("skills/Skills"));
 const Projects = React.lazy(() => import("projects/Projects"));
 const Experience = React.lazy(() => import("experience/Experience"));
 
-function MainContent() {
+function MainContent({user}) {
   const activeView = useSelector((state) => state.navigation.activeView);
-
+   console.log(user);
   switch (activeView) {
     case "skills":
       return (
@@ -38,7 +38,7 @@ function MainContent() {
     case "contact":
       return <Contact />;  
     default:
-      return <Dashboard />;
+      return <Dashboard user={user}/>;
   }
 }
 
