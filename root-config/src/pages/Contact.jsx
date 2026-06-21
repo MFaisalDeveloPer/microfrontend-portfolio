@@ -41,14 +41,13 @@ function Contact() {
           }}
         >
           <Avatar
+            src="https://github.com/MFaisalDeveloPer.png"
+            alt="Md Faisal"
             sx={{
               width: 90,
               height: 90,
-              fontSize: 32,
             }}
-          >
-            MF
-          </Avatar>
+          />
 
           <Box>
             <Typography variant="h4">
@@ -59,6 +58,13 @@ function Contact() {
               color="text.secondary"
             >
               Senior Software Engineer
+              <Typography color="text.secondary">
+                Hyderabad, India
+              </Typography>
+
+              <Typography color="text.secondary">
+                7+ Years Experience | MERN Stack | Microfrontends
+              </Typography>
             </Typography>
 
             <Typography
@@ -93,12 +99,39 @@ function Contact() {
           experience building enterprise
           applications using React.js, Node.js,
           Redux Toolkit, Micro Frontends,
-          Microservices, SQL Server and Azure
+          Microservices, SQL Server and AWS
           DevOps. Experienced in designing
           scalable frontend architectures and
           delivering business-critical solutions.
         </Typography>
+        <Box
+          sx={{
+            display: "flex",
+            gap: 2,
+            flexWrap: "wrap",
+            mb: 4,
+          }}
+        >
+          <Chip
+            label="7+ Years Experience"
+            color="primary"
+          />
 
+          <Chip
+            label="5+ Enterprise Projects"
+            color="primary"
+          />
+
+          <Chip
+            label="React & Node.js"
+            color="primary"
+          />
+
+          <Chip
+            label="Microfrontends"
+            color="primary"
+          />
+        </Box>
         <Stack spacing={2}>
           <Button
             startIcon={<EmailIcon />}

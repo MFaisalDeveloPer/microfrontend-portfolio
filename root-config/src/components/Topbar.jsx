@@ -55,7 +55,7 @@ function Topbar({ user }) {
             fontWeight: 600,
           }}
         >
-          Frontend Engineering Command Center
+          FULL STACK Engineering Command Center
         </Typography>
 
         <IconButton

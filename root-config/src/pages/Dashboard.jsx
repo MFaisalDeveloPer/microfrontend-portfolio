@@ -164,7 +164,7 @@ function Dashboard({ user }) {
           },
           {
             skill: "Node.js",
-            value: 85,
+            value: 60,
           },
           {
             skill: "Microfrontends",
@@ -172,12 +172,20 @@ function Dashboard({ user }) {
           },
           {
             skill: "AWS DevOps",
-            value: 80,
+            value: 50,
           },
           {
             skill: "SQL Server",
-            value: 85,
+            value: 65,
           },
+          {
+            skill:"MONGODBB",
+            value: 60,
+          },
+          {
+            skill:"CICD-PIPELINES",
+            value:75,
+          }
         ].map((item) => (
           <Box
             key={item.skill}
