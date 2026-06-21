@@ -14,6 +14,8 @@ function ArchitectureLab() {
     minWidth: "180px",
     color: "white",
     fontWeight: "600",
+    boxShadow:
+      "0 8px 20px rgba(0,0,0,0.25)",
   };
 
   return (
@@ -43,14 +45,14 @@ function ArchitectureLab() {
             textAlign: "center",
           }}
         >
-          Micro Frontend Architecture
+          Enterprise Microfrontend Architecture
         </Typography>
 
+        {/* Root Config */}
         <Box
           sx={{
             display: "flex",
             justifyContent: "center",
-            mb: 4,
           }}
         >
           <Box sx={nodeStyle}>
@@ -62,19 +64,19 @@ function ArchitectureLab() {
           align="center"
           sx={{
             fontSize: "2rem",
-            mb: 2,
+            my: 2,
           }}
         >
           ↓
         </Typography>
 
+        {/* Microfrontends */}
         <Box
           sx={{
             display: "flex",
             justifyContent: "center",
             gap: 3,
             flexWrap: "wrap",
-            mb: 4,
           }}
         >
           <Box sx={nodeStyle}>
@@ -98,12 +100,49 @@ function ArchitectureLab() {
           align="center"
           sx={{
             fontSize: "2rem",
-            mb: 2,
+            my: 2,
           }}
         >
           ↓
         </Typography>
 
+        {/* Projects */}
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            gap: 3,
+            flexWrap: "wrap",
+          }}
+        >
+          <Box sx={nodeStyle}>
+            Verizon
+          </Box>
+
+          <Box sx={nodeStyle}>
+            MyEdio
+          </Box>
+
+          <Box sx={nodeStyle}>
+            Banking
+          </Box>
+
+          <Box sx={nodeStyle}>
+            Health Manager
+          </Box>
+        </Box>
+
+        <Typography
+          align="center"
+          sx={{
+            fontSize: "2rem",
+            my: 2,
+          }}
+        >
+          ↓
+        </Typography>
+
+        {/* Shared Services */}
         <Box
           sx={{
             display: "flex",
@@ -128,6 +167,39 @@ function ArchitectureLab() {
             Module Federation
           </Box>
         </Box>
+
+        <Typography
+          variant="h5"
+          sx={{
+            mt: 6,
+            mb: 3,
+            color: "#38bdf8",
+            fontWeight: 700,
+          }}
+        >
+          Architecture Highlights
+        </Typography>
+
+        <ul>
+          <li>
+            Independent Microfrontend Deployment
+          </li>
+          <li>
+            Shared React Runtime
+          </li>
+          <li>
+            Module Federation Integration
+          </li>
+          <li>
+            Global Theme Management
+          </li>
+          <li>
+            Google OAuth Authentication
+          </li>
+          <li>
+            Enterprise Scale Project Showcase
+          </li>
+        </ul>
       </Paper>
     </>
   );
