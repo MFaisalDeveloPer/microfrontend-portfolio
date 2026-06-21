@@ -104,7 +104,7 @@ function App() {
                 width: "18px",
                 height: "18px",
                 borderRadius: "50%",
-                background: "#00d4ff",
+                background: theme.palette.primary.main,
               }}
             />
 
@@ -119,7 +119,7 @@ function App() {
             >
               <h2
                 style={{
-                  color: "#00d4ff",
+                  color: theme.palette.primary.main,
                   marginBottom: "10px",
                 }}
               >

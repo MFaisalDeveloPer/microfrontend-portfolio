@@ -5,6 +5,7 @@ import { federation } from "@module-federation/vite";
 export default defineConfig({
   plugins: [
     react(),
+
     federation({
       name: "skills",
 
@@ -15,15 +16,31 @@ export default defineConfig({
       },
 
       shared: {
-  react: {
-    singleton: true,
-    requiredVersion: false,
-  },
-  "react-dom": {
-    singleton: true,
-    requiredVersion: false,
-  },
-},
+        react: {
+          singleton: true,
+          requiredVersion: false,
+        },
+
+        "react-dom": {
+          singleton: true,
+          requiredVersion: false,
+        },
+
+        "@mui/material": {
+          singleton: true,
+          requiredVersion: false,
+        },
+
+        "@emotion/react": {
+          singleton: true,
+          requiredVersion: false,
+        },
+
+        "@emotion/styled": {
+          singleton: true,
+          requiredVersion: false,
+        },
+      },
 
       dts: false,
     }),
